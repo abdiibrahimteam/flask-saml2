@@ -40,7 +40,7 @@ def decode_saml_xml(data: bytes) -> bytes:
         return decoded
 
     # Try decode and inflate
-    decoded = zlib.decompress(decoded, -15)
+    decoded = zlib.decompress(decoded)
     # Is it XML yet?
     if decoded.strip().startswith(b'<'):
         return decoded
