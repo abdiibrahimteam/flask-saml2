@@ -34,6 +34,7 @@ def decode_saml_xml(data: bytes) -> bytes:
     """Decodes some base64-encoded and possibly zipped string
     into an XML string.
     """
+    print(data)
     decoded = base64.b64decode(data)
     # Is it XML yet?
     if decoded.strip().startswith(b'<'):
