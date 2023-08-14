@@ -34,7 +34,15 @@ def decode_saml_xml(data: bytes) -> bytes:
     """Decodes some base64-encoded and possibly zipped string
     into an XML string.
     """
-   
     decoded = base64.b64decode(data)
-    print(decoded)
-    return decoded
+    # Is it XML yet?
+    if decoded.strip().startswith(b'<'):
+        return decoded
+
+    # Try decode and inflate
+    decoded = zlib.decompress(decoded, -15)
+    # Is it XML yet?
+    if decoded.strip().startswith(b'<'):
+        return decoded
+
+    raise ValueError("Does not look like an XML string!")
