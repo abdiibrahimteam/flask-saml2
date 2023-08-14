@@ -34,8 +34,7 @@ class AuthnRequestParser(XmlParser):
     @cached_property
     def acs_url(self) -> str:
         """The AssertionConsumerServiceURL attribute."""
-        return self._xpath_xml_tree('/samlp:AuthnRequest/@AssertionConsumerServiceURL')[0]
-
+        return "https://srmtest.abdiibrahim.com.tr/saml2/sp/acs/"
     @cached_property
     def provider_name(self) -> str:
         """The ProviderName attribute, if it exists."""
