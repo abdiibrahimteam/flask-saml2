@@ -234,7 +234,7 @@ class IdentityProvider(Generic[U]):
         This blueprint needs to be registered with a Flask application
         to expose the IdP functionality.
         """
-        bp = Blueprint(self.blueprint_name, 'app.controller.saml', template_folder='templates')
+        bp = Blueprint(self.blueprint_name, 'flask_saml2.idp', template_folder='templates')
 
         bp.add_url_rule('/login/', view_func=LoginBegin.as_view(
             'login_begin', idp=self))
