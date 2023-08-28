@@ -20,7 +20,7 @@ class XmlParser:
     """
     #: The input XML document as a string
     xml_string: str
-
+    print(xml_string)
     #: The parsed XML document
     xml_tree: XmlNode
 
