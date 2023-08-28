@@ -85,7 +85,7 @@ class SPHandler(object):
     ) -> dict:
         """Build parameters for the assertion template."""
         audience = self.get_audience(request)
-
+        print(request)
         return {
             'ASSERTION_ID': self.get_assertion_id(),
             'AUDIENCE': audience,
