@@ -189,7 +189,7 @@ class SPHandler(object):
         Fetches various parameters from the request into a dict.
         """
         return {
-            'ACS_URL': request.acs_url,
+            'ACS_URL': self.acs_url,
             'REQUEST_ID': request.request_id,
             'DESTINATION': request.destination,
             'PROVIDER_NAME': request.provider_name,
@@ -208,7 +208,7 @@ class SPHandler(object):
 
         self.validate_destination(request)
         self.validate_entity_id(request)
-        self.validate_acs_url(request)
+        #self.validate_acs_url(request)
 
     def validate_destination(self, request: AuthnRequestParser):
         """
