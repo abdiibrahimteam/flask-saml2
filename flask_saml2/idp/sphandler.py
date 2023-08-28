@@ -170,7 +170,7 @@ class SPHandler(object):
         """Make a dictionary of parameters for the response template."""
         return {
             'handler': self,
-            'acs_url': request.acs_url,
+            'acs_url': self.acs_url,
             'saml_response': self.encode_response(response),
             'relay_state': relay_state,
             'autosubmit': self.idp.get_idp_autosubmit(),
