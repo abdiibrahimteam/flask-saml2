@@ -34,7 +34,7 @@ class AuthnRequestParser(XmlParser):
     @cached_property
     def acs_url(self) -> str:
         """The AssertionConsumerServiceURL attribute."""
-        print(self._xpath_xml_tree('/samlp:AuthnRequest/@AssertionConsumerServiceURL'))
+        print(self._xpath_xml_tree('/samlp:AuthnRequest'))
         return self._xpath_xml_tree('/samlp:AuthnRequest/@AssertionConsumerServiceURL')[0]
     @cached_property
     def provider_name(self) -> str:
