@@ -34,8 +34,11 @@ class AuthnRequestParser(XmlParser):
     @cached_property
     def acs_url(self) -> str:
         """The AssertionConsumerServiceURL attribute."""
-        
-        return 'https://srm.abdiibrahim.com.tr:443/saml2/sp/acs'
+        switch = {
+            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=32749fb2-5064-4796-bd03-8c8c3fb953b0":"https://srm.abdiibrahim.com.tr:8443/sap/saml2/sp/acs/100",
+            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=f359bd2b-a025-4340-89f9-78fb539c864a":"https://srm.abdiibrahim.com.tr:443/saml2/sp/acs"
+        }
+        return switch[self._xpath_xml_tree('/samlp:AuthnRequest/@Destination')[0]]
     @cached_property
     def provider_name(self) -> str:
         """The ProviderName attribute, if it exists."""
