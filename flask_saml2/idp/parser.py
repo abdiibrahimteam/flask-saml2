@@ -36,7 +36,8 @@ class AuthnRequestParser(XmlParser):
         """The AssertionConsumerServiceURL attribute."""
         switch = {
             "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=32749fb2-5064-4796-bd03-8c8c3fb953b0":"https://srm.abdiibrahim.com.tr:8443/sap/saml2/sp/acs/100",
-            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=f359bd2b-a025-4340-89f9-78fb539c864a":"https://srm.abdiibrahim.com.tr/saml2/sp/acs"
+            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=f359bd2b-a025-4340-89f9-78fb539c864a":"https://srm.abdiibrahim.com.tr/saml2/sp/acs",
+            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=1faebd05-4e14-42e9-b614-a67324a9665c":"https://srmtest.abdiibrahim.com.tr:443/saml2/sp/acs"
         }
         return switch[self._xpath_xml_tree('/samlp:AuthnRequest/@Destination')[0]]
     @cached_property
