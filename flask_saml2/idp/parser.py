@@ -38,7 +38,7 @@ class AuthnRequestParser(XmlParser):
             "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=32749fb2-5064-4796-bd03-8c8c3fb953b0":"https://srm.abdiibrahim.com.tr:8443/sap/saml2/sp/acs/100",
             "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=f359bd2b-a025-4340-89f9-78fb539c864a":"https://srm.abdiibrahim.com.tr/saml2/sp/acs",
             "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=c7f6d3b4-e9bc-4f9b-97ed-400b9ef673c5":"https://srm.abdiibrahim.com.tr:8443/sap/saml2/sp/acs/100",
-            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=dbc9a6e6-f415-4b95-98cf-1f03ccf0647e":"https://aiakademi-staging.eu.crossknowledge.com/libs/simplesaml/www/module.php/saml/sp/saml2-acs.php/SAML2-4"
+            "https://atlas.abdiibrahim.com.tr/auth/login/saml?client_id=dbc9a6e6-f415-4b95-98cf-1f03ccf0647e":"https://aiakademi.eu.crossknowledge.com/libs/simplesaml/www/module.php/saml/sp/saml2-acs.php/SAML2-16"
         }
         return switch[self._xpath_xml_tree('/samlp:AuthnRequest/@Destination')[0]]
     @cached_property
