@@ -119,5 +119,5 @@ class NameIDTemplate(XmlTemplate):
     def generate_xml(self):
         return self.element('NameID', attrs={
             'Format': self.params['SUBJECT_FORMAT'],
-            'SPNameQualifier': self.params.get('SP_NAME_QUALIFIER'),
+            #'SPNameQualifier': self.params.get('SP_NAME_QUALIFIER'),
         }, text=self.params['SUBJECT'])
