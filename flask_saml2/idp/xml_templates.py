@@ -53,7 +53,7 @@ class SubjectTemplate(XmlTemplate):
     .. code-block:: xml
 
         <saml:Subject>
-            <saml:NameID Format="${SUBJECT_FORMAT}" SPNameQualifier="${SP_NAME_QUALIFIER}">
+            <saml:NameID Format="${SUBJECT_FORMAT}">
             ${SUBJECT}
             </saml:NameID>
             <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
